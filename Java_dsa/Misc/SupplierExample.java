@@ -1,5 +1,3 @@
-package javaPrograms;
-
 import java.util.function.Supplier;
 
 public class SupplierExample {
