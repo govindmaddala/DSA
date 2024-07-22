@@ -1,0 +1,8 @@
+# Ignore all .class files
+*.class
+
+# Other patterns you may want to ignore
+*.log
+*.tmp
+node_modules/
+dist/
