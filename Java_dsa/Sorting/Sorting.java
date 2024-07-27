@@ -23,29 +23,53 @@ public class Sorting {
 
     public static int[] insertionSort(int[] arr) {
         int n = arr.length;
-        for(int i=1; i < n; i++){
+        for (int i = 1; i < n; i++) {
             int j = i - 1;
             int temp = arr[i];
-            while (j >= 0 && arr[j] > temp) {    
-                // arr[j] > temp ==> 10, | 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 arr[j] = 10 and temp = 1
-                // so replace a[j+1] i.e 1st index with 0th index and now 1 is placed its position until
-                arr[j+1] = arr[j];
+            while (j >= 0 && arr[j] > temp) {
+                // arr[j] > temp ==> 10, | 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 arr[j] = 10 and temp =
+                // 1
+                // so replace a[j+1] i.e 1st index with 0th index and now 1 is placed its
+                // position until
+                arr[j + 1] = arr[j];
                 j--;
             }
-            arr[j+1] = temp;
+            arr[j + 1] = temp;
+        }
+        return arr;
+    }
+
+    public static int[] selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int min = arr[i];
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                int current = arr[j];
+                if (current < min) {
+                    min = current;
+                    minIndex = j;
+                }
+            }
+            arr[minIndex] = arr[i];
+            arr[i] = min;
         }
         return arr;
     }
 
     public static void main(String[] args) {
-
-        int[] arr1 = {10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1};
-        int[] arr2 = {10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1};
+        int[] arr1 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
+        int[] arr2 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
+        int[] arr3 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
+        
         arr1 = Sorting.bubbleSort(arr1);
         arr2 = Sorting.insertionSort(arr2);
-        Arrays.stream(arr1).forEach(x-> System.out.print(x + " "));
+        arr3 = Sorting.selectionSort(arr3);
+        Arrays.stream(arr1).forEach(x -> System.out.print(x + " "));
         System.out.println("\n----------------------------------");
-        Arrays.stream(arr2).forEach(x-> System.out.print(x + " "));
-        
+        Arrays.stream(arr2).forEach(x -> System.out.print(x + " "));
+        System.out.println("\n----------------------------------");
+        Arrays.stream(arr3).forEach(x -> System.out.print(x + " "));
+        System.out.println("\n----------------------------------");
     }
 }
