@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Sorting {
@@ -44,6 +43,7 @@ public class Sorting {
         for (int i = 0; i < n - 1; i++) {
             int min = arr[i];
             int minIndex = i;
+            //get the minimum index and minmum next and swap with the sorted arr's last index with min num we get from unsorted array.
             for (int j = i + 1; j < n; j++) {
                 int current = arr[j];
                 if (current < min) {
@@ -61,7 +61,7 @@ public class Sorting {
         int[] arr1 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
         int[] arr2 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
         int[] arr3 = { 10, 1, 5, 3, 9, 2, 6, 8, 0, -1, 1 };
-        
+
         arr1 = Sorting.bubbleSort(arr1);
         arr2 = Sorting.insertionSort(arr2);
         arr3 = Sorting.selectionSort(arr3);
