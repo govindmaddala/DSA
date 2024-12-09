@@ -41,6 +41,6 @@ public class Validparenthises {
     public static void main(String[] args) {
         boolean isValid = Validparenthises.isValid("()[]{}");
         
-        // System.out.println(isValid);
+        System.out.println(isValid);
     }
 }

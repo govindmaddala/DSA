@@ -28,6 +28,11 @@ class BinaryTree {
         /*
             (7) <= (3) <= (1) => (2) => (4) => (8)
                     => (5)   (6) <=
+
+                      1
+                3           2
+            7       5  4        6
+        9             8          
         */
 
         this.root = node1;
@@ -83,5 +88,7 @@ class BinaryTree {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
+        System.out.println("----------");
+        bt.iterativePreOrder(bt.root);
     }
 }
